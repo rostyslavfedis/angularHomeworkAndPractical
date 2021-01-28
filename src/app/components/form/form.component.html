@@ -1,6 +1,7 @@
 <form [formGroup]="myForm">
   <div class="form-wrapper">
     <div class="form-block">
+      <div class="center">MY FIRST FORM!</div>
       <label>Name *</label>
       <input type="text" formControlName="name">
       <span *ngIf="myForm.controls.name.invalid">Min length 3 characters</span>
@@ -29,9 +30,8 @@
   </div>
 </form>
 
-<div *ngFor="let visitor of visitors">
-  <span>Hello,</span>
-  {{visitor.name}}
+<div class="forma" *ngFor="let visitor of visitors">
+  <span class="spann">Hello, {{visitor.name}}</span>
   <div>
     <ul>
       <li>Name: {{visitor.name}}</li>

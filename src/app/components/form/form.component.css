@@ -3,6 +3,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+  background-color: darkcyan;
  }
 
 .form-block {
@@ -10,6 +11,7 @@
    display: flex;
    flex-direction: column;
    margin-top: 15px;
+
  }
 
 form-button {
@@ -18,4 +20,21 @@ form-button {
    justify-content: center;
    margin: 20px 0;
  }
-
+label{
+  font-weight: bolder;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.forma{
+  background-color: darkcyan;
+}
+.spann{
+  font-weight: bold;
+  font-size: 35px;
+}
