@@ -1,7 +1,8 @@
 import * as uuid from 'uuid';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FORMS_CONSTANTS } from '../form.constants';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FORMS_CONSTANTS} from '../form.constants';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -13,27 +14,24 @@ export class FormComponent implements OnInit {
   myForm: FormGroup;
   visitors = [];
 
-  constructor(
-    private fb: FormBuilder
-  ) { }
+  constructor( private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
   }
 
-  private initForm() {
+  private initForm(): void {
     this.myForm = this.fb.group({
-      name: ['',[Validators.required, Validators.minLength(3)]],
-      age: ['',[Validators.required, Validators.min(1)]],
-      email: ['',[Validators.required, Validators.email]],
-      phone: ['',[Validators.required,Validators.minLength(10)]]
-    })
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      age: ['', [Validators.required, Validators.min(1)]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.minLength(10)]]
+    });
   }
 
-  saveFormData(form) {
+  saveFormData(form): void{
     console.log(form);
-    const visitorData = {id: uuid.v4(),...form.value}
-    this.visitors.push(visitorData);
+    this.visitors.push({id: uuid.v4(), ...form.value});
     this.myForm.reset();
   }
 
